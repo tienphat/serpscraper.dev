@@ -95,4 +95,13 @@ class SerpApiClientTest extends TestCase
         $this->assertArrayHasKey('data', $result);
         $this->assertArrayHasKey('title', $result['data']);
     }
+
+    public function test_utility_methods_exist_on_client(): void
+    {
+        $client = $this->makeClient();
+        $this->assertTrue(method_exists($client, 'ipLookup'));
+        $this->assertTrue(method_exists($client, 'exchangeRate'));
+        $this->assertTrue(method_exists($client, 'cryptoPrice'));
+        $this->assertTrue(method_exists($client, 'domainInfo'));
+    }
 }

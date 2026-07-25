@@ -101,6 +101,48 @@ class SerpApiClient implements SerpApiClientInterface
         return $this->call('webpage', $params);
     }
 
+    /** IP Geolocation & Proxy/Hosting/Mobile Detection. */
+    public function ipLookup(?string $ip = null, array $options = []): SerpApiResponse
+    {
+        $params = $options;
+        if ($ip !== null && $ip !== '') {
+            $params['ip'] = $ip;
+        }
+        return $this->call('ip-lookup', $params);
+    }
+
+    /** Fiat Currency Exchange Rates (ECB). */
+    public function exchangeRate(?string $from = 'USD', ?string $to = null, array $options = []): SerpApiResponse
+    {
+        $params = $options;
+        if ($from !== null && $from !== '') {
+            $params['from'] = $from;
+        }
+        if ($to !== null && $to !== '') {
+            $params['to'] = $to;
+        }
+        return $this->call('exchange-rate', $params);
+    }
+
+    /** Real-time Crypto Market Prices via CoinGecko. */
+    public function cryptoPrice(?string $symbols = 'btc,eth', ?string $vsCurrencies = 'usd', array $options = []): SerpApiResponse
+    {
+        $params = $options;
+        if ($symbols !== null && $symbols !== '') {
+            $params['symbols'] = $symbols;
+        }
+        if ($vsCurrencies !== null && $vsCurrencies !== '') {
+            $params['vs_currencies'] = $vsCurrencies;
+        }
+        return $this->call('crypto-price', $params);
+    }
+
+    /** Complete Domain Intelligence (WHOIS, SSL, DNS, Subdomains, Metadata). */
+    public function domainInfo(string $domain, array $options = []): SerpApiResponse
+    {
+        return $this->call('domain-info', ['domain' => $domain] + $options);
+    }
+
     // ── Internals ────────────────────────────────────────────────────────────
 
     private function call(string $endpoint, array $params): SerpApiResponse

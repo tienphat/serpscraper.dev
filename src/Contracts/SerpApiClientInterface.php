@@ -22,4 +22,8 @@ interface SerpApiClientInterface
     public function reviewsSearch(string $keyword, array $options = []): SerpApiResponse;
     public function search(string $keyword, array $options = []): SerpApiResponse;
     public function extractWebpage(string $url, bool $includeHtml = false): SerpApiResponse;
+    public function ipLookup(?string $ip = null, array $options = []): SerpApiResponse;
+    public function exchangeRate(?string $from = 'USD', ?string $to = null, array $options = []): SerpApiResponse;
+    public function cryptoPrice(?string $symbols = 'btc,eth', ?string $vsCurrencies = 'usd', array $options = []): SerpApiResponse;
+    public function domainInfo(string $domain, array $options = []): SerpApiResponse;
 }

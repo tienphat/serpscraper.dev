@@ -125,6 +125,10 @@ php artisan vendor:publish --tag=serpapi-config
 | `reviewsSearch($kw, $opts)` | Review results with rating signals |
 | `search($kw, $opts)` | Unified auto-detect endpoint |
 | `extractWebpage($url, $html?)` | Content, metadata, images & links from any URL |
+| `ipLookup($ip?, $opts)` | IP Geolocation & proxy/hosting/mobile detection |
+| `exchangeRate($from?, $to?, $opts)` | Fiat currency exchange rates (ECB) |
+| `cryptoPrice($symbols?, $vs?, $opts)` | Real-time crypto prices & 24h market stats |
+| `domainInfo($domain, $opts)` | WHOIS, SSL cert, DNS, Subdomains & Website preview |
 
 **Common `$opts` keys:**
 
