@@ -1,393 +1,305 @@
-# serpapi-php
+# SerpScraper Multi-Language SDK: Real-Time Google SERP API, Google AI Overview & Trends (PHP, Python, Node.js, Go)
 
 <p align="center">
-  <a href="https://serpapi.org"><img src="https://serpapi.org/img/logo.png" width="100" alt="SerpApi.Org"></a>
+  <a href="https://serpscraper.dev"><img src="https://serpscraper.dev/img/logo.png" width="110" alt="SerpScraper.Dev Logo"></a>
 </p>
 
 <p align="center">
-  <a href="https://github.com/tienphat/serpapi-php/actions"><img src="https://github.com/tienphat/serpapi-php/workflows/Tests/badge.svg" alt="CI"></a>
-  <a href="https://packagist.org/packages/tienphat/serpapi-php"><img src="https://img.shields.io/packagist/v/tienphat/serpapi-php" alt="Version"></a>
-  <a href="https://packagist.org/packages/tienphat/serpapi-php"><img src="https://img.shields.io/packagist/dt/tienphat/serpapi-php" alt="Downloads"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/packagist/l/tienphat/serpapi-php" alt="MIT"></a>
-  <img src="https://img.shields.io/badge/PHP-8.1%2B-777BB4" alt="PHP 8.1+">
+  Official multi-language client libraries for <a href="https://serpscraper.dev"><strong>SerpScraper.Dev</strong></a> — The high-speed <a href="https://serpscraper.dev/serp-api">SERP API</a> designed for developers, SEO platforms, and AI agents.<br>
+  Scrape real-time Google & Bing search rankings, parse <a href="https://serpscraper.dev/google-ai-overview-api">Google AI Overviews</a>, track <a href="https://serpscraper.dev/google-trends-api">Google Trends</a>, and extract web intelligence as clean, structured JSON.
 </p>
 
 <p align="center">
-  Official PHP client for <a href="https://serpapi.org"><strong>SerpApi.Org</strong></a> — real-time Bing search results as structured JSON.<br>
-  Web · Images · Videos · News · Shopping · Scholar · Maps · Reviews · Autocomplete · Webpage
+  <a href="https://packagist.org/packages/tienphat/serpscraper-php"><img src="https://img.shields.io/badge/PHP-8.1%2B-777BB4?logo=php" alt="PHP 8.1+"></a>
+  <a href="https://pypi.org/project/serpscraper/"><img src="https://img.shields.io/badge/Python-3.8%2B-3776AB?logo=python" alt="Python 3.8+"></a>
+  <a href="https://www.npmjs.com/package/serpscraper"><img src="https://img.shields.io/badge/Node.js-18%2B-339933?logo=node.js" alt="Node.js 18+"></a>
+  <a href="https://pkg.go.dev/github.com/tienphat/serpscraper-php/go"><img src="https://img.shields.io/badge/Go-1.21%2B-00ADD8?logo=go" alt="Go 1.21+"></a>
+  <img src="https://img.shields.io/badge/Dependencies-Zero-success" alt="Zero Dependencies">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="MIT License"></a>
+  <a href="https://serpscraper.dev/api-key"><img src="https://img.shields.io/badge/API%20Key-Free%20Tier-green" alt="Free API Key"></a>
 </p>
 
 ---
 
-## Highlights
+## 🌟 Why Choose SerpScraper?
 
-| | |
-|---|---|
-| 🆓 **5,000 free queries/month** | No credit card required |
-| ⚡ **Sub-second responses** | Live data, no stale cache |
-| 🌍 **Country & language targeting** | `gl` + `hl` on every call |
-| 📦 **Zero runtime dependencies** | Pure PHP + cURL |
-| 🔒 **Type-safe** | Typed exceptions, typed response wrapper |
-| 🧪 **Fully tested** | 61 tests, 93 assertions |
+[SerpScraper.Dev](https://serpscraper.dev) is built from the ground up for modern developers, LLM engineers, and SEO specialists who require reliable search data at scale:
 
----
-
-## Requirements
-
-- PHP **8.1+**
-- `ext-curl`, `ext-json`
+- ⚡ **Sub-Second Response Times**: Engineered with distributed high-performance edge nodes for ultra-fast query execution.
+- 🛡️ **Zero Block Guarantee**: Built-in rotating residential and datacenter proxies completely bypass Cloudflare, Akamai, Google reCAPTCHA, and bot detection systems.
+- 🤖 **Native Google AI Overview Extraction**: Directly extract synthesized AI answers, citation cards, and source links via the [Google AI Overview API](https://serpscraper.dev/google-ai-overview-api) — perfect for RAG and AI search workflows.
+- 📈 **Real-Time Google Trends**: Monitor breaking news, trending searches, and historical search volume timelines with the [Google Trends API](https://serpscraper.dev/google-trends-api).
+- 🌍 **Global Geolocation Targeting**: Precise local search emulation across 190+ countries (`gl`), languages (`hl`), and regional domains (`google.co.uk`, `google.co.jp`, etc.).
+- 📦 **Zero External Dependencies**: All SDKs in this monorepo rely strictly on standard libraries (cURL, urllib, native fetch, net/http) for maximum security and zero dependency conflicts.
 
 ---
 
-## Installation
+## 📁 Monorepo Structure
 
-```bash
-composer require tienphat/serpapi-php
+This repository provides official client libraries across four major programming languages:
+
+```
+serpscraper/
+├── php/        # 🐘 PHP SDK (Composer: tienphat/serpscraper-php) -> php/README.md
+├── python/     # 🐍 Python SDK (PyPI: serpscraper)               -> python/README.md
+├── nodejs/     # 🟩 Node.js / TypeScript SDK (npm: serpscraper)  -> nodejs/README.md
+├── go/         # 🐹 Go SDK (Go Modules: .../go)                 -> go/README.md
+├── composer.json # Root Composer support for backward-compatible installs
+└── README.md
 ```
 
+| Language | Package Manager | Installation | Detailed Guide |
+|---|---|---|---|
+| **PHP** | Packagist / Composer | `composer require tienphat/serpscraper-php` | [`php/README.md`](php/README.md) |
+| **Python** | PyPI / pip | `pip install serpscraper` | [`python/README.md`](python/README.md) |
+| **Node.js / TS** | npm / yarn / pnpm | `npm install serpscraper` | [`nodejs/README.md`](nodejs/README.md) |
+| **Go** | Go Modules | `go get github.com/tienphat/serpscraper-php/go` | [`go/README.md`](go/README.md) |
+
 ---
 
-## Quick Start
+## 🚀 Quickstarts
+
+Grab your free API key at [serpscraper.dev/api-key](https://serpscraper.dev/api-key).
+
+### 🐘 1. PHP SDK
+
+```bash
+composer require tienphat/serpscraper-php
+```
 
 ```php
-use SerpApiOrg\SerpApiClient;
+use SerpScraper\SerpScraperClient;
 
-$client = new SerpApiClient('YOUR_TOKEN');
+$client = new SerpScraperClient('YOUR_API_KEY');
 
-$results = $client->webSearch('laravel framework');
+// 1. Google Web Search & AI Overview
+$results = $client->googleSearch('best generative ai tools', ['gl' => 'US', 'hl' => 'en']);
 
 foreach ($results as $item) {
-    echo $item['title'] . ' — ' . $item['link'] . PHP_EOL;
+    echo "#{$item['position']} {$item['title']} — {$item['link']}\n";
 }
-```
 
-Get your free token at **[serpapi.org](https://serpapi.org)** → Sign in → API Key.
+if ($summary = $results->summary()) {
+    echo "\n[Google AI Overview]:\n{$summary}\n";
+}
+
+// 2. Google Trends Real-Time
+$trends = $client->trendsNow(['gl' => 'US']);
+echo "Top Trend: " . $trends->first()['keyword'] . "\n";
+```
+👉 *Read the complete [PHP SDK Documentation](php/README.md).*
 
 ---
 
-## Configuration
-
-### Token only (simplest)
-
-```php
-$client = new SerpApiClient('YOUR_TOKEN');
-```
-
-### With default locale (fluent)
-
-```php
-use SerpApiOrg\SerpApiConfig;
-use SerpApiOrg\SerpApiClient;
-
-$config = SerpApiConfig::make('YOUR_TOKEN')
-    ->country('US')   // applied to every call unless overridden
-    ->language('en')
-    ->timeout(15);    // seconds
-
-$client = new SerpApiClient($config);
-```
-
-### From a config file (Laravel / framework)
-
-```php
-// config/serpapi.php
-return [
-    'token'    => env('SERPAPI_TOKEN'),
-    'country'  => env('SERPAPI_COUNTRY', 'US'),
-    'language' => env('SERPAPI_LANGUAGE', 'en'),
-    'timeout'  => 30,
-];
-
-// Boot
-$client = new SerpApiClient(SerpApiConfig::fromArray(config('serpapi')));
-```
-
-Publish the built-in config stub:
+### 🐍 2. Python SDK
 
 ```bash
-php artisan vendor:publish --tag=serpapi-config
+pip install serpscraper
 ```
+
+```python
+from serpscraper import SerpScraperClient
+
+client = SerpScraperClient("YOUR_API_KEY")
+
+# 1. Google Web Search & AI Overview
+results = client.google_search("best generative ai tools", gl="US", hl="en")
+
+for item in results:
+    print(f"#{item['position']} {item['title']} — {item['link']}")
+
+if results.summary:
+    print(f"\n[Google AI Overview]:\n{results.summary}")
+
+# 2. Google Trends Real-Time
+trends = client.trends_now(gl="US")
+print(f"Top Trend: {trends.first['keyword']}")
+```
+👉 *Read the complete [Python SDK Documentation](python/README.md).*
 
 ---
 
-## All Endpoints
-
-| Method | Description |
-|--------|-------------|
-| `webSearch($kw, $opts)` | Organic results — titles, links, snippets |
-| `imageSearch($kw, $opts)` | Images with thumbnails & source URLs |
-| `videoSearch($kw, $opts)` | Videos — publisher, views, duration |
-| `newsSearch($kw, $opts)` | Articles with source & date |
-| `shoppingSearch($kw, $opts)` | Products — price, merchant, thumbnail |
-| `autocomplete($kw, $opts)` | Search suggestions |
-| `scholarSearch($kw, $opts)` | Google Scholar — citations, year, PDF |
-| `mapsSearch($kw, $opts)` | Local places — address, phone, hours, coords |
-| `reviewsSearch($kw, $opts)` | Review results with rating signals |
-| `search($kw, $opts)` | Unified auto-detect endpoint |
-| `extractWebpage($url, $html?)` | Content, metadata, images & links from any URL |
-| `ipLookup($ip?, $opts)` | IP Geolocation & proxy/hosting/mobile detection |
-| `exchangeRate($from?, $to?, $opts)` | Fiat currency exchange rates (ECB) |
-| `cryptoPrice($symbols?, $vs?, $opts)` | Real-time crypto prices & 24h market stats |
-| `domainInfo($domain, $opts)` | WHOIS, SSL cert, DNS, Subdomains & Website preview |
-
-**Common `$opts` keys:**
-
-| Key | Type | Notes |
-|-----|------|-------|
-| `gl` | `string` | Country code — see [`config/serpapi-countries.php`](config/serpapi-countries.php) |
-| `hl` | `string` | Language code — see [`config/serpapi-languages.php`](config/serpapi-languages.php) |
-| `size` | `int` | Results per page (max 100) |
-| `page` | `int` | Page number (1-based) |
-
----
-
-## The Response Object
-
-Every method returns a `SerpApiResponse`. You never need to touch the raw array directly.
-
-```php
-$res = $client->webSearch('php 8.4');
-
-// Iterate directly
-foreach ($res as $item) { … }
-
-// Access data
-$res->data();          // list<array>  — all result items
-$res->first();         // array|null   — first item
-$res->pluck('link');   // list<string> — one field across all items
-$res->count();         // int          — same as count($res)
-$res->isEmpty();       // bool
-
-// Metadata
-$res->request();       // the params echoed back by the API
-$res->inSeconds();     // float — API latency
-$res->meta();          // ['total_results' => …, 'page' => …]
-
-// Serialise
-$res->toArray();       // full raw response
-$res->toJson();        // pretty-printed JSON string
-```
-
----
-
-## Usage Examples
-
-### Web search
-
-```php
-$res = $client->webSearch('best PHP frameworks 2025', ['gl' => 'US', 'size' => 10]);
-
-foreach ($res as $item) {
-    echo $item['title'] . PHP_EOL;
-    echo $item['link']  . PHP_EOL;
-}
-```
-
-### Image search
-
-```php
-$res = $client->imageSearch('northern lights 4k', ['gl' => 'US', 'size' => 20]);
-
-foreach ($res as $img) {
-    echo $img['title']     . PHP_EOL;
-    echo $img['image_url'] . PHP_EOL;
-}
-```
-
-### News search
-
-```php
-$res = $client->newsSearch('AI regulation 2025', ['gl' => 'US', 'hl' => 'en']);
-
-foreach ($res as $article) {
-    printf("[%s] %s — %s\n", $article['source'], $article['title'], $article['date']);
-}
-```
-
-### Shopping search
-
-```php
-$res = $client->shoppingSearch('MacBook Pro M4', ['gl' => 'US', 'size' => 5]);
-
-foreach ($res as $product) {
-    printf("%s | %s | %s\n", $product['title'], $product['price'], $product['seller']);
-}
-```
-
-### Scholar search
-
-```php
-$res = $client->scholarSearch('attention is all you need', ['size' => 5]);
-
-foreach ($res as $paper) {
-    echo $paper['title'] . " ({$paper['year']}) — cited by {$paper['citedBy']}\n";
-    if (!empty($paper['pdfUrl'])) {
-        echo 'PDF: ' . $paper['pdfUrl'] . "\n";
-    }
-}
-```
-
-### Maps / local search
-
-```php
-$res = $client->mapsSearch('coffee near Brooklyn NY', ['gl' => 'US', 'size' => 5]);
-
-foreach ($res as $place) {
-    printf("%s | %s | %s\n", $place['title'], $place['address'], $place['open_status']);
-}
-```
-
-### Webpage extraction
-
-```php
-$res = $client->extractWebpage('https://techcrunch.com/some-article/');
-
-$data = $res->toArray()['data'];
-
-echo $data['title'] . PHP_EOL;
-echo 'Author : ' . ($data['metadata']['author']     ?? '—') . PHP_EOL;
-echo 'Words  : ' . ($data['metadata']['word_count'] ?? '—') . PHP_EOL;
-echo PHP_EOL . $data['content'];
-```
-
-### Per-call locale override
-
-```php
-// Config has default country=US, but override per call:
-$res = $client->webSearch('football', ['gl' => 'GB', 'hl' => 'en']);
-```
-
-### Paginate
-
-```php
-for ($page = 1; $page <= 3; $page++) {
-    $res = $client->webSearch('open source PHP', ['page' => $page, 'size' => 10]);
-    foreach ($res as $item) { … }
-}
-```
-
-### Pluck a field across results
-
-```php
-$links = $client->webSearch('laravel docs')->pluck('link');
-// ['https://laravel.com', 'https://laravel.com/docs', …]
-```
-
----
-
-## Error Handling
-
-```php
-use SerpApiOrg\Exceptions\AuthException;
-use SerpApiOrg\Exceptions\RateLimitException;
-use SerpApiOrg\Exceptions\NetworkException;
-use SerpApiOrg\Exceptions\SerpApiException;
-
-try {
-    $res = $client->webSearch('query');
-} catch (AuthException $e) {
-    // HTTP 401/403 — invalid or expired token
-    // → check https://serpapi.org/api-key
-} catch (RateLimitException $e) {
-    // HTTP 429 — quota exceeded
-    // → upgrade plan or add a delay
-    sleep(2);
-} catch (NetworkException $e) {
-    // cURL failed before any HTTP response
-} catch (SerpApiException $e) {
-    // Any other API error (4xx / 5xx / bad JSON)
-    echo $e->getMessage() . ' (HTTP ' . $e->getCode() . ')';
-}
-```
-
-**Exception hierarchy:**
-
-```
-\RuntimeException
-  └── SerpApiException        ← base, all API errors
-        ├── AuthException     ← 401 / 403
-        ├── RateLimitException← 429
-        └── NetworkException  ← cURL / connection failure
-```
-
----
-
-## Testing
+### 🟩 3. Node.js & TypeScript SDK
 
 ```bash
-# Unit tests — no API token needed
-composer test
+npm install serpscraper
+```
 
-# Live integration (requires SERPAPI_TOKEN in env)
-SERPAPI_TOKEN=your_token vendor/bin/phpunit --filter live_
+```javascript
+const { SerpScraperClient } = require('serpscraper');
+
+const client = new SerpScraperClient('YOUR_API_KEY');
+
+async function main() {
+  // 1. Google Web Search & AI Overview
+  const res = await client.googleSearch('best generative ai tools', { gl: 'US', hl: 'en' });
+
+  for (const item of res) {
+    console.log(`#${item.position} ${item.title} — ${item.link}`);
+  }
+
+  if (res.summary) {
+    console.log('\n[Google AI Overview]:\n', res.summary);
+  }
+
+  // 2. Google Trends Real-Time
+  const trends = await client.trendsNow({ gl: 'US' });
+  console.log('Top Trend:', trends.first?.keyword);
+}
+
+main();
+```
+👉 *Read the complete [Node.js SDK Documentation](nodejs/README.md).*
+
+---
+
+### 🐹 4. Go SDK
+
+```bash
+go get github.com/tienphat/serpscraper-php/go
+```
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"time"
+
+	serpscraper "github.com/tienphat/serpscraper-php/go"
+)
+
+func main() {
+	client, _ := serpscraper.NewClient("YOUR_API_KEY")
+	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+	defer cancel()
+
+	// 1. Google Web Search & AI Overview
+	resp, _ := client.GoogleSearch(ctx, "best generative ai tools",
+		serpscraper.WithGL("US"),
+		serpscraper.WithHL("en"),
+	)
+
+	for _, item := range resp.Data {
+		fmt.Printf("#%d %s — %s\n", item.Position, item.Title, item.Link)
+	}
+
+	if summary := resp.Summary(); summary != "" {
+		fmt.Printf("\n[Google AI Overview]:\n%s\n", summary)
+	}
+
+	// 2. Google Trends Real-Time
+	trends, _ := client.TrendsNow(ctx, serpscraper.WithGL("US"))
+	if len(trends.Data) > 0 {
+		fmt.Printf("Top Trend: %s\n", trends.Data[0].Keyword)
+	}
+}
+```
+👉 *Read the complete [Go SDK Documentation](go/README.md).*
+
+---
+
+## 🌐 Supported APIs & Live Endpoints
+
+All SDKs map directly to the high-performance endpoints hosted at [serpscraper.dev](https://serpscraper.dev):
+
+| API Feature | PHP / Node / Go Method | Python Method | Landing Page & Documentation |
+|---|---|---|---|
+| **Google Search API** | `googleSearch()` / `GoogleSearch` | `google_search()` | [Google Search API](https://serpscraper.dev/web-search-api) |
+| **Web Search API** | `webSearch()` / `WebSearch` | `web_search()` | [Web Search API (Bing / Multi-Engine)](https://serpscraper.dev/web-search-api) |
+| **Google AI Overview API** | `aioSearch()` / `AioSearch` | `aio_search()` | [Google AI Overview API](https://serpscraper.dev/google-ai-overview-api) |
+| **Google Trends Real-Time** | `trendsNow()` / `TrendsNow` | `trends_now()` | [Google Trends API](https://serpscraper.dev/google-trends-api) |
+| **Google Trends Interest** | `trendsInterest()` / `TrendsInterest` | `trends_interest()` | [Google Trends Interest Over Time](https://serpscraper.dev/google-trends-api) |
+| **Image Search API** | `imageSearch()` / `ImageSearch` | `image_search()` | [Image Search API](https://serpscraper.dev/image-search-api) |
+| **Video Search API** | `videoSearch()` / `VideoSearch` | `video_search()` | [Video Search API](https://serpscraper.dev/video-search-api) |
+| **News Search API** | `newsSearch()` / `NewsSearch` | `news_search()` | [News Search API](https://serpscraper.dev/news-search-api) |
+| **Shopping Search API** | `shoppingSearch()` / `ShoppingSearch` | `shopping_search()` | [Shopping Search API](https://serpscraper.dev/shopping-search-api) |
+| **Google Scholar API** | `scholarSearch()` / `ScholarSearch` | `scholar_search()` | [Google Scholar API](https://serpscraper.dev/scholar-search-api) |
+| **Google Maps API** | `mapsSearch()` / `MapsSearch` | `maps_search()` | [Google Maps & Places API](https://serpscraper.dev/maps-search-api) |
+| **Reviews Search API** | `reviewsSearch()` / `ReviewsSearch` | `reviews_search()` | [Customer Reviews Search API](https://serpscraper.dev/reviews-search-api) |
+| **SERP Autocomplete** | `autocomplete()` / `Autocomplete` | `autocomplete()` | [SERP Autocomplete API](https://serpscraper.dev/serp-api) |
+| **Webpage Extractor** | `extractWebpage()` / `ExtractWebpage` | `extract_webpage()` | [Webpage Content Extractor API](https://serpscraper.dev/webpage-api) |
+| **IP Geolocation API** | `ipLookup()` / `IPLookup` | `ip_lookup()` | [IP Geolocation & Threat API](https://serpscraper.dev/ip-lookup-api) |
+| **Exchange Rate API** | `exchangeRate()` / `ExchangeRate` | `exchange_rate()` | [Fiat Exchange Rate API](https://serpscraper.dev/exchange-rate-api) |
+| **Crypto Price API** | `cryptoPrice()` / `CryptoPrice` | `crypto_price()` | [Cryptocurrency Price API](https://serpscraper.dev/crypto-price-api) |
+| **Domain Intelligence** | `domainInfo()` / `DomainInfo` | `domain_info()` | [Domain Intelligence & WHOIS API](https://serpscraper.dev/domain-intelligence-api) |
+
+---
+
+## 🎯 Key Use Cases
+
+### 1. 🤖 AI Agents & Retrieval-Augmented Generation (RAG)
+Equip LLMs (OpenAI GPT-4o, Claude 3.5, Llama 3, Gemini 1.5) with real-time web knowledge. Extract both organic sources and synthesized [Google AI Overviews](https://serpscraper.dev/google-ai-overview-api) with zero hallucination risk.
+
+### 2. 📊 SEO Rank Tracking & Competitor Intelligence
+Monitor organic rankings, SERP features (Featured Snippets, People Also Ask, Local Packs), and track ranking fluctuations across 190+ countries with exact local IP emulation via the [SERP API](https://serpscraper.dev/serp-api).
+
+### 3. 🔥 Trend Detection & Market Research
+Discover viral topics before competitors with real-time trending queries from the [Google Trends API](https://serpscraper.dev/google-trends-api). Analyze multi-year historical search interest to validate product demand.
+
+### 4. 🛒 E-Commerce Price Monitoring & Review Aggregation
+Track product prices, availability, and merchant ratings across Google Shopping with the [Shopping Search API](https://serpscraper.dev/shopping-search-api) and [Reviews Search API](https://serpscraper.dev/reviews-search-api).
+
+---
+
+## ❓ Frequently Asked Questions (FAQ)
+
+<details>
+<summary><strong>1. How does SerpScraper bypass Google CAPTCHA and bot detection?</strong></summary>
+SerpScraper manages an enterprise-scale pool of rotating residential proxies and AI-driven anti-fingerprinting browsers. All CAPTCHA solving, IP rotation, and header spoofing are handled automatically on the server side, ensuring consistent 99.9% uptime and unblockable scraping.
+</details>
+
+<details>
+<summary><strong>2. Can I parse Google AI Overviews with this SDK?</strong></summary>
+Yes! SerpScraper provides native parsing for Google AI Overviews (SGE). Every response object includes direct helper methods like <code>$results->summary()</code>, <code>results.summary</code>, or <code>resp.Summary()</code> to immediately extract AI-synthesized markdown text and cited references. Learn more at <a href="https://serpscraper.dev/google-ai-overview-api">serpscraper.dev/google-ai-overview-api</a>.
+</details>
+
+<details>
+<summary><strong>3. Are there any external runtime dependencies in these SDKs?</strong></summary>
+None. All SDKs are implemented with pure standard libraries: PHP cURL, Python <code>urllib</code>, Node.js native <code>fetch</code>, and Go <code>net/http</code>. This ensures zero dependency conflicts, lightweight footprints, and optimal security.
+</details>
+
+<details>
+<summary><strong>4. How do I obtain a free API key?</strong></summary>
+You can sign up and get your free API key instantly with generous monthly credits at <a href="https://serpscraper.dev/api-key">serpscraper.dev/api-key</a>.
+</details>
+
+---
+
+## 🧪 Testing
+
+Unit and integration test suites are available in each respective language directory:
+
+```bash
+# 1. PHP (PHPUnit 11 — 67 tests, 114 assertions)
+cd php && vendor/bin/phpunit
+
+# 2. Python (unittest — 5 tests)
+cd python && python -m unittest discover -s tests
+
+# 3. Node.js (native test runner — 2 tests)
+cd nodejs && npm test
+
+# 4. Go (testing package)
+cd go && go test -v ./...
 ```
 
 ---
 
-## Package Structure
+## 📚 Documentation & Resources
 
-```
-serpapi-php/
-├── config/
-│   ├── serpapi.php              # Main config (token, country, language, timeout)
-│   ├── serpapi-countries.php    # 47 country codes (gl)
-│   └── serpapi-languages.php    # 54 language codes (hl)
-├── src/
-│   ├── SerpApiClient.php        # Main client
-│   ├── SerpApiConfig.php        # Immutable config value object
-│   ├── SerpApiResponse.php      # Typed response wrapper
-│   ├── Contracts/
-│   │   └── SerpApiClientInterface.php
-│   └── Exceptions/
-│       ├── SerpApiException.php
-│       ├── AuthException.php
-│       ├── RateLimitException.php
-│       └── NetworkException.php
-└── tests/Unit/
-    ├── SerpApiClientTest.php    # 22 tests
-    ├── SerpApiConfigTest.php    # 19 tests
-    └── SerpApiResponseTest.php  # 20 tests
-```
+- 🌐 **Official Website**: [https://serpscraper.dev](https://serpscraper.dev)
+- 📖 **API Documentation**: [https://serpscraper.dev/docs](https://serpscraper.dev/docs)
+- 🔑 **Get Free API Key**: [https://serpscraper.dev/api-key](https://serpscraper.dev/api-key)
+- 📊 **SERP API Landing Page**: [https://serpscraper.dev/serp-api](https://serpscraper.dev/serp-api)
+- 🤖 **Google AI Overview API**: [https://serpscraper.dev/google-ai-overview-api](https://serpscraper.dev/google-ai-overview-api)
+- 📈 **Google Trends API**: [https://serpscraper.dev/google-trends-api](https://serpscraper.dev/google-trends-api)
+- 💬 **Telegram Support**: [@peterpanpro](https://t.me/peterpanpro)
+- 🐛 **Issue Tracker**: [GitHub Issues](https://github.com/tienphat/serpscraper-php/issues)
 
 ---
 
-## Supported Countries & Languages
+## 📄 License
 
-Full reference tables are included in the package:
-
-- **Countries (`gl`)** → [`config/serpapi-countries.php`](config/serpapi-countries.php) — 47 countries
-- **Languages (`hl`)** → [`config/serpapi-languages.php`](config/serpapi-languages.php) — 54 languages
-
-Common values at a glance:
-
-| Country | `gl` | | Language | `hl` |
-|---------|------|-|----------|------|
-| United States | `US` | | English | `en` |
-| United Kingdom | `GB` | | Vietnamese | `vi` |
-| Vietnam | `VN` | | French | `fr` |
-| Germany | `DE` | | German | `de` |
-| Japan | `JP` | | Japanese | `ja` |
-| France | `FR` | | Spanish | `es` |
-| India | `IN` | | Hindi | `hi` |
-| Brazil | `BR` | | Portuguese (BR) | `pt-br` |
-
----
-
-## Changelog
-
-See [CHANGELOG.md](CHANGELOG.md).
-
----
-
-## License
-
-MIT — see [LICENSE](LICENSE).
-
----
-
-<p align="center">
-  <a href="https://serpapi.org">serpapi.org</a> ·
-  <a href="https://serpapi.org/docs">Docs</a> ·
-  <a href="https://github.com/tienphat/serpapi-php/issues">Issues</a> ·
-  <a href="https://t.me/peterpanpro">Telegram</a>
-</p>
+The SerpScraper SDK Monorepo is open-sourced software licensed under the [MIT License](LICENSE).

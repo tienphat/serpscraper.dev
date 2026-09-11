@@ -1,0 +1,30 @@
+{
+  "name": "serpscraper",
+  "version": "1.1.0",
+  "description": "Official Node.js / JavaScript client for SerpScraper.Dev API (Google, Bing, AI Overviews, Google Trends).",
+  "main": "src/index.js",
+  "types": "src/index.d.ts",
+  "scripts": {
+    "test": "node --test tests/client.test.js"
+  },
+  "keywords": [
+    "serp",
+    "serpscraper",
+    "google-search",
+    "bing-search",
+    "ai-overview",
+    "google-trends",
+    "web-scraping",
+    "seo"
+  ],
+  "author": "SerpScraper.Dev <domaininfo2110@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://serpscraper.dev",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tienphat/serpscraper-php.git"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

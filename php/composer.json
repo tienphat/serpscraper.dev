@@ -23,15 +23,15 @@
     },
     "autoload": {
         "psr-4": {
-            "SerpScraper\\": "php/src/"
+            "SerpScraper\\": "src/"
         },
         "files": [
-            "php/src/compatibility.php"
+            "src/compatibility.php"
         ]
     },
     "autoload-dev": {
         "psr-4": {
-            "SerpScraper\\Tests\\": "php/tests/"
+            "SerpScraper\\Tests\\": "tests/"
         }
     },
     "scripts": {
