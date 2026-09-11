@@ -16,7 +16,7 @@
   <a href="https://pkg.go.dev/github.com/tienphat/serpscraper-php/go"><img src="https://img.shields.io/badge/Go-1.21%2B-00ADD8?logo=go" alt="Go 1.21+"></a>
   <img src="https://img.shields.io/badge/Dependencies-Zero-success" alt="Zero Dependencies">
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="MIT License"></a>
-  <a href="https://serpscraper.dev/api-key"><img src="https://img.shields.io/badge/API%20Key-Free%20Tier-green" alt="Free API Key"></a>
+  <a href="https://serpscraper.dev"><img src="https://img.shields.io/badge/API%20Key-Free%20Tier-green" alt="Free API Key"></a>
 </p>
 
 ---
@@ -59,7 +59,7 @@ serpscraper/
 
 ## 🚀 Quickstarts
 
-Grab your free API key at [serpscraper.dev/api-key](https://serpscraper.dev/api-key).
+Grab your free API key at [serpscraper.dev](https://serpscraper.dev).
 
 ### 🐘 1. PHP SDK
 
@@ -262,7 +262,7 @@ None. All SDKs are implemented with pure standard libraries: PHP cURL, Python <c
 
 <details>
 <summary><strong>4. How do I obtain a free API key?</strong></summary>
-You can sign up and get your free API key instantly with generous monthly credits at <a href="https://serpscraper.dev/api-key">serpscraper.dev/api-key</a>.
+You can sign up and get your free API key instantly with generous monthly credits at <a href="https://serpscraper.dev">serpscraper.dev</a>.
 </details>
 
 ---
@@ -291,7 +291,7 @@ cd go && go test -v ./...
 
 - 🌐 **Official Website**: [https://serpscraper.dev](https://serpscraper.dev)
 - 📖 **API Documentation**: [https://serpscraper.dev/docs](https://serpscraper.dev/docs)
-- 🔑 **Get Free API Key**: [https://serpscraper.dev/api-key](https://serpscraper.dev/api-key)
+- 🔑 **Get Free API Key**: [https://serpscraper.dev](https://serpscraper.dev)
 - 📊 **SERP API Landing Page**: [https://serpscraper.dev/serp-api](https://serpscraper.dev/serp-api)
 - 🤖 **Google AI Overview API**: [https://serpscraper.dev/google-ai-overview-api](https://serpscraper.dev/google-ai-overview-api)
 - 📈 **Google Trends API**: [https://serpscraper.dev/google-trends-api](https://serpscraper.dev/google-trends-api)

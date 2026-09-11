@@ -5,7 +5,7 @@
 
 return [
 
-    // API token — https://serpscraper.dev/api-key
+    // API token — https://serpscraper.dev
     'token'    => env('SERPSCRAPER_TOKEN', env('SERPAPI_TOKEN', '')),
 
     // Default country code (gl). See config/serpscraper-countries.php for all values.

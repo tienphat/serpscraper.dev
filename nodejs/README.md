@@ -14,7 +14,7 @@
   <img src="https://img.shields.io/badge/TypeScript-Ready-3178C6?logo=typescript" alt="TypeScript Ready">
   <img src="https://img.shields.io/badge/Dependencies-Zero-success" alt="Zero Dependencies">
   <a href="../LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="MIT License"></a>
-  <a href="https://serpscraper.dev/api-key"><img src="https://img.shields.io/badge/API%20Key-Free%20Tier-green" alt="Free API Key"></a>
+  <a href="https://serpscraper.dev"><img src="https://img.shields.io/badge/API%20Key-Free%20Tier-green" alt="Free API Key"></a>
 </p>
 
 ---
@@ -46,7 +46,7 @@ pnpm add serpscraper
 
 ## 🚀 Quick Start
 
-Get your free API key at [serpscraper.dev/api-key](https://serpscraper.dev/api-key).
+Get your free API key at [serpscraper.dev](https://serpscraper.dev).
 
 ### 1. Google Web Search & AI Overview Extraction
 
@@ -241,7 +241,7 @@ npm test
 
 - 🌐 **Website**: [https://serpscraper.dev](https://serpscraper.dev)
 - 📖 **Official API Documentation**: [https://serpscraper.dev/docs](https://serpscraper.dev/docs)
-- 🔑 **Get Free API Key**: [https://serpscraper.dev/api-key](https://serpscraper.dev/api-key)
+- 🔑 **Get Free API Key**: [https://serpscraper.dev](https://serpscraper.dev)
 - 🐛 **Issue Tracker**: [GitHub Issues](https://github.com/tienphat/serpscraper-php/issues)
 - 💬 **Telegram Support**: [@peterpanpro](https://t.me/peterpanpro)
 
