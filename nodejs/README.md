@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  Official <strong>Node.js & TypeScript</strong> client library for <a href="https://serpscraper.dev"><strong>SerpScraper.Dev</strong></a> — The fast, unblockable <a href="https://serpscraper.dev/serp-api">SERP API</a> for real-time Google search rankings, <a href="https://serpscraper.dev/google-ai-overview-api">Google AI Overviews</a>, and <a href="https://serpscraper.dev/google-trends-api">Google Trends</a>.
+  Official <strong>Node.js & TypeScript</strong> client library for <a href="https://serpscraper.dev"><strong>SerpScraper.Dev</strong></a> — a fast <a href="https://serpscraper.dev/serp-api">SERP API</a> for real-time Google search rankings, <a href="https://serpscraper.dev/google-ai-overview-api">Google AI Overviews</a>, and <a href="https://serpscraper.dev/google-trends-api">Google Trends</a>.
 </p>
 
 <p align="center">
@@ -26,7 +26,7 @@
 - 🤖 **Native Google AI Overview Extraction**: Parse synthesized AI answers, citation cards, and markdown text effortlessly with `res.summary` and `res.sources` via the [Google AI Overview API](https://serpscraper.dev/google-ai-overview-api).
 - 📈 **Real-Time Google Trends**: Monitor breaking news, trending searches, and historical search volume timelines using the [Google Trends API](https://serpscraper.dev/google-trends-api).
 - ⚡ **Edge & Serverless Ready**: Works seamlessly in Next.js (App Router & Pages Router), Remix, Cloudflare Workers, Express, Fastify, and NestJS.
-- 🛡️ **Zero Block Guarantee**: Built-in rotating residential proxies by [SerpScraper.Dev](https://serpscraper.dev) bypass Cloudflare and Google CAPTCHAs.
+- 🛡️ **Rotating Residential Proxies**: Requests route through [SerpScraper.Dev](https://serpscraper.dev)'s proxy pool to reduce blocks from Cloudflare and CAPTCHA challenges.
 
 ---
 

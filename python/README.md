@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  Official <strong>Python</strong> client library for <a href="https://serpscraper.dev"><strong>SerpScraper.Dev</strong></a> — The fast, unblockable <a href="https://serpscraper.dev/serp-api">SERP API</a> for real-time Google search rankings, <a href="https://serpscraper.dev/google-ai-overview-api">Google AI Overviews</a>, and <a href="https://serpscraper.dev/google-trends-api">Google Trends</a>.
+  Official <strong>Python</strong> client library for <a href="https://serpscraper.dev"><strong>SerpScraper.Dev</strong></a> — a fast <a href="https://serpscraper.dev/serp-api">SERP API</a> for real-time Google search rankings, <a href="https://serpscraper.dev/google-ai-overview-api">Google AI Overviews</a>, and <a href="https://serpscraper.dev/google-trends-api">Google Trends</a>.
 </p>
 
 <p align="center">
@@ -108,7 +108,7 @@ for point in interest.timeline_data:
 
 ## 🤖 Use Case: LangChain & LLM Tool Integration
 
-Turn SerpScraper into an unblockable live web search tool for OpenAI, Anthropic, or local LLMs:
+Turn SerpScraper into a live web search tool for OpenAI, Anthropic, or local LLMs:
 
 ```python
 from serpscraper import SerpScraperClient

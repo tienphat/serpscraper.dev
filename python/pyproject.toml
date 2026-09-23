@@ -10,6 +10,6 @@ readme = "README.md"
 requires-python = ">=3.8"
 license = { text = "MIT" }
 authors = [
-    { name = "SerpScraper.Dev", email = "domaininfo2110@gmail.com" }
+    { name = "SerpScraper.Dev", email = "support@serpscraper.dev" }
 ]
 keywords = ["serp", "serpscraper", "google", "bing", "search-api", "ai-overview", "google-trends"]
