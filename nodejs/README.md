@@ -13,7 +13,7 @@
   <img src="https://img.shields.io/badge/Node.js-18%2B-339933?logo=node.js" alt="Node.js 18+">
   <img src="https://img.shields.io/badge/TypeScript-Ready-3178C6?logo=typescript" alt="TypeScript Ready">
   <img src="https://img.shields.io/badge/Dependencies-Zero-success" alt="Zero Dependencies">
-  <a href="../LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="MIT License"></a>
+  <a href="https://github.com/tienphat/serpscraper.dev/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="MIT License"></a>
   <a href="https://serpscraper.dev"><img src="https://img.shields.io/badge/API%20Key-Free%20Tier-green" alt="Free API Key"></a>
 </p>
 
@@ -256,4 +256,4 @@ npm test
 
 ## 📄 License
 
-The SerpScraper Node.js SDK is open-sourced software licensed under the [MIT License](../LICENSE).
+The SerpScraper Node.js SDK is open-sourced software licensed under the [MIT License](https://github.com/tienphat/serpscraper.dev/blob/main/LICENSE).

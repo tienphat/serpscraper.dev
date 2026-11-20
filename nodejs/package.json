@@ -1,28 +1,53 @@
 {
   "name": "serpscraper",
   "version": "1.2.0",
-  "description": "Official Node.js / JavaScript client for SerpScraper.Dev API (Google, Bing, AI Overviews, Google Trends).",
+  "description": "Node.js & TypeScript SERP API client: real-time Google search results, AI Overviews, Google Trends, news, images, maps and SEO data as JSON. 5,000 free credits on signup.",
   "main": "src/index.js",
   "types": "src/index.d.ts",
   "scripts": {
     "test": "node --test tests/client.test.js"
   },
+  "files": [
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
   "keywords": [
     "serp",
+    "serp-api",
     "serpscraper",
+    "serp-scraper",
+    "google-search-api",
+    "google-serp",
     "google-search",
     "bing-search",
-    "ai-overview",
+    "search-api",
+    "search-results",
+    "rank-tracker",
+    "rank-checker",
+    "seo",
+    "seo-api",
+    "keyword-research",
+    "backlinks",
+    "google-ai-overview",
     "google-trends",
+    "google-news-api",
+    "google-maps-scraper",
     "web-scraping",
-    "seo"
+    "proxy-api",
+    "typescript"
   ],
-  "author": "SerpScraper.Dev <support@serpscraper.dev>",
+  "author": "SerpScraper.Dev <support@serpscraper.dev> (https://serpscraper.dev)",
   "license": "MIT",
-  "homepage": "https://serpscraper.dev",
+  "homepage": "https://serpscraper.dev/serp-api",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tienphat/serpscraper-php.git"
+    "url": "git+https://github.com/tienphat/serpscraper.dev.git",
+    "directory": "nodejs"
+  },
+  "bugs": {
+    "url": "https://serpscraper.dev/contact",
+    "email": "support@serpscraper.dev"
   },
   "engines": {
     "node": ">=18.0.0"
