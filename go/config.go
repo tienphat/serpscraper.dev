@@ -8,7 +8,7 @@ import (
 const (
 	DefaultBaseURL   = "https://serpscraper.dev/api/v1"
 	DefaultTimeout   = 30 * time.Second
-	DefaultUserAgent = "SerpScraperDev-Go/1.1 (+https://github.com/tienphat/serpscraper.dev)"
+	DefaultUserAgent = "SerpScraperDev-Go/1.2 (+https://github.com/tienphat/serpscraper.dev)"
 )
 
 // Config holds client configurations.
