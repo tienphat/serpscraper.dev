@@ -83,3 +83,50 @@ func TestGoogleSearchWithMockServer(t *testing.T) {
 		t.Errorf("expected 1 source, got %d", len(resp.Sources()))
 	}
 }
+
+func TestSEOAndProxyEndpoints(t *testing.T) {
+	var seen []*http.Request
+	ts := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		seen = append(seen, r.Clone(context.Background()))
+		w.Header().Set("Content-Type", "application/json")
+		_, _ = w.Write([]byte(`{"data":[],"in_seconds":0}`))
+	}))
+	defer ts.Close()
+
+	client, err := NewClientWithConfig(NewConfig("tok").WithBaseURL(ts.URL))
+	if err != nil {
+		t.Fatalf("failed to create client: %v", err)
+	}
+	ctx := context.Background()
+
+	_, _ = client.SEODomainOverview(ctx, "apple.com")
+	_, _ = client.SEOBacklinks(ctx, "github.com")
+	_, _ = client.SEOKeywordMetrics(ctx, []string{"serp api", "rank tracker"})
+	_, _ = client.SEOKeywordSuggestions(ctx, "laravel")
+	_, _ = client.ProxySession(ctx, "US")
+	_, _ = client.ProxySession(ctx, "")
+	_, _ = client.ProxyRotate(ctx, "abc123")
+	_, _ = client.ProxyLocations(ctx)
+
+	want := []struct{ path, key, val string }{
+		{"/seo/domain-overview", "domain", "apple.com"},
+		{"/seo/backlinks", "domain", "github.com"},
+		{"/seo/keywords/metrics", "keywords", "serp api,rank tracker"},
+		{"/seo/keywords/suggestions", "keyword", "laravel"},
+		{"/proxy/session", "country", "US"},
+		{"/proxy/session", "country", ""},
+		{"/proxy/rotate", "session_id", "abc123"},
+		{"/proxy/locations", "token", "tok"},
+	}
+	if len(seen) != len(want) {
+		t.Fatalf("expected %d requests, got %d", len(want), len(seen))
+	}
+	for i, w := range want {
+		if seen[i].URL.Path != w.path {
+			t.Errorf("request %d: path %s, want %s", i, seen[i].URL.Path, w.path)
+		}
+		if got := seen[i].URL.Query().Get(w.key); got != w.val {
+			t.Errorf("request %d: %s=%q, want %q", i, w.key, got, w.val)
+		}
+	}
+}

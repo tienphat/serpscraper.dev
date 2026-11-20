@@ -180,6 +180,45 @@ func (c *Client) DomainInfo(ctx context.Context, domain string, opts ...Option) 
 	return c.call(ctx, "domain-info", params, opts...)
 }
 
+// SEODomainOverview returns domain rank, organic traffic, keyword count and technologies.
+func (c *Client) SEODomainOverview(ctx context.Context, domain string, opts ...Option) (*Response, error) {
+	return c.call(ctx, "seo/domain-overview", map[string]string{"domain": domain}, opts...)
+}
+
+// SEOBacklinks returns the backlink profile: domain rating, backlinks, referring domains.
+func (c *Client) SEOBacklinks(ctx context.Context, domain string, opts ...Option) (*Response, error) {
+	return c.call(ctx, "seo/backlinks", map[string]string{"domain": domain}, opts...)
+}
+
+// SEOKeywordMetrics returns volume, CPC and competition for up to 50 keywords (1 credit per 10).
+func (c *Client) SEOKeywordMetrics(ctx context.Context, keywords []string, opts ...Option) (*Response, error) {
+	return c.call(ctx, "seo/keywords/metrics", map[string]string{"keywords": strings.Join(keywords, ",")}, opts...)
+}
+
+// SEOKeywordSuggestions returns autocomplete-based keyword suggestions.
+func (c *Client) SEOKeywordSuggestions(ctx context.Context, keyword string, opts ...Option) (*Response, error) {
+	return c.call(ctx, "seo/keywords/suggestions", map[string]string{"keyword": keyword}, opts...)
+}
+
+// ProxySession allocates a proxy session; pass an empty country for automatic selection.
+func (c *Client) ProxySession(ctx context.Context, country string, opts ...Option) (*Response, error) {
+	params := map[string]string{}
+	if country != "" {
+		params["country"] = country
+	}
+	return c.call(ctx, "proxy/session", params, opts...)
+}
+
+// ProxyRotate rotates the exit IP of an active proxy session.
+func (c *Client) ProxyRotate(ctx context.Context, sessionID string, opts ...Option) (*Response, error) {
+	return c.call(ctx, "proxy/rotate", map[string]string{"session_id": sessionID}, opts...)
+}
+
+// ProxyLocations lists supported proxy countries and regions.
+func (c *Client) ProxyLocations(ctx context.Context, opts ...Option) (*Response, error) {
+	return c.call(ctx, "proxy/locations", map[string]string{}, opts...)
+}
+
 // ── Internal Dispatcher ───────────────────────────────────────────────────────
 
 func (c *Client) call(ctx context.Context, endpoint string, baseParams map[string]string, opts ...Option) (*Response, error) {

@@ -77,6 +77,39 @@ class SerpScraperClientTest extends TestCase
         $this->assertArrayHasKey('source', $res->first());
     }
 
+    public function test_seo_and_proxy_endpoints_build_expected_urls(): void
+    {
+        $client = new CapturingClient(SerpScraperConfig::make('tok'));
+
+        $client->seoDomainOverview('apple.com', ['country' => 'US']);
+        $this->assertStringContainsString('/seo/domain-overview?', $client->lastUrl());
+        $this->assertStringContainsString('domain=apple.com', $client->lastUrl());
+
+        $client->seoBacklinks('github.com');
+        $this->assertStringContainsString('/seo/backlinks?', $client->lastUrl());
+
+        $client->seoKeywordMetrics(['serp api', 'rank tracker']);
+        $this->assertStringContainsString('/seo/keywords/metrics?', $client->lastUrl());
+        $this->assertStringContainsString('keywords=serp+api%2Crank+tracker', $client->lastUrl());
+
+        $client->seoKeywordSuggestions('laravel');
+        $this->assertStringContainsString('/seo/keywords/suggestions?', $client->lastUrl());
+
+        $client->proxySession('US');
+        $this->assertStringContainsString('/proxy/session?', $client->lastUrl());
+        $this->assertStringContainsString('country=US', $client->lastUrl());
+
+        $client->proxySession();
+        $this->assertStringNotContainsString('country=', $client->lastUrl());
+
+        $client->proxyRotate('abc123');
+        $this->assertStringContainsString('session_id=abc123', $client->lastUrl());
+
+        $client->proxyLocations();
+        $this->assertStringContainsString('/proxy/locations?', $client->lastUrl());
+        $this->assertStringContainsString('token=tok', $client->lastUrl());
+    }
+
     public function test_extract_webpage_returns_response(): void
     {
         $client = $this->stubClient(200, $this->fakeWebpagePayload());

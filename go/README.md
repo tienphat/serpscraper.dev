@@ -204,6 +204,13 @@ All endpoints return strongly typed `*serpscraper.Response` structs with conveni
 | `client.ExchangeRate(ctx, from, to, opts...)` | `exchange-rate` | [Exchange Rate API](https://serpscraper.dev/exchange-rate-api) |
 | `client.CryptoPrice(ctx, symbols, vs, opts...)` | `crypto-price` | [Cryptocurrency Price API](https://serpscraper.dev/crypto-price-api) |
 | `client.DomainInfo(ctx, domain, opts...)` | `domain-info` | [Domain Intelligence & WHOIS API](https://serpscraper.dev/domain-intelligence-api) |
+| `client.SEODomainOverview(ctx, domain, opts...)` | `seo/domain-overview` | [SEO Domain Overview API](https://serpscraper.dev/docs) |
+| `client.SEOBacklinks(ctx, domain, opts...)` | `seo/backlinks` | [SEO Backlinks API](https://serpscraper.dev/docs) |
+| `client.SEOKeywordMetrics(ctx, keywords, opts...)` | `seo/keywords/metrics` | [Keyword Metrics API](https://serpscraper.dev/docs) |
+| `client.SEOKeywordSuggestions(ctx, keyword, opts...)` | `seo/keywords/suggestions` | [Keyword Suggestions API](https://serpscraper.dev/docs) |
+| `client.ProxySession(ctx, country, opts...)` | `proxy/session` | [Proxy API](https://serpscraper.dev/proxy-api) |
+| `client.ProxyRotate(ctx, sessionID, opts...)` | `proxy/rotate` | [Proxy API](https://serpscraper.dev/proxy-api) |
+| `client.ProxyLocations(ctx, opts...)` | `proxy/locations` | [Proxy API](https://serpscraper.dev/proxy-api) |
 
 ---
 

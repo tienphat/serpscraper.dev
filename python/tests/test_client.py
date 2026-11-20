@@ -64,6 +64,33 @@ class TestSerpScraperPython(unittest.TestCase):
         self.assertIn("token=my-secret-key", req.full_url)
 
     @patch("urllib.request.urlopen")
+    def test_seo_and_proxy_endpoints_build_expected_urls(self, mock_urlopen):
+        mock_response = MagicMock()
+        mock_response.status = 200
+        mock_response.read.return_value = json.dumps({"data": [], "in_seconds": 0}).encode("utf-8")
+        mock_response.__enter__.return_value = mock_response
+        mock_urlopen.return_value = mock_response
+
+        client = SerpScraperClient("tok")
+        calls = [
+            (client.seo_domain_overview("apple.com"), "/seo/domain-overview?", "domain=apple.com"),
+            (client.seo_backlinks("github.com"), "/seo/backlinks?", "domain=github.com"),
+            (client.seo_keyword_metrics(["serp api", "rank tracker"]), "/seo/keywords/metrics?", "keywords=serp+api%2Crank+tracker"),
+            (client.seo_keyword_suggestions("laravel"), "/seo/keywords/suggestions?", "keyword=laravel"),
+            (client.proxy_session("US"), "/proxy/session?", "country=US"),
+            (client.proxy_rotate("abc123"), "/proxy/rotate?", "session_id=abc123"),
+            (client.proxy_locations(), "/proxy/locations?", "token=tok"),
+        ]
+        urls = [c.args[0].full_url for c in mock_urlopen.call_args_list]
+        self.assertEqual(len(urls), len(calls))
+        for url, (_, path, param) in zip(urls, calls):
+            self.assertIn(path, url)
+            self.assertIn(param, url)
+
+        client.proxy_session()
+        self.assertNotIn("country=", mock_urlopen.call_args[0][0].full_url)
+
+    @patch("urllib.request.urlopen")
     def test_client_auth_error_raises_exception(self, mock_urlopen):
         mock_urlopen.side_effect = urllib.error.HTTPError(
             url="http://test",

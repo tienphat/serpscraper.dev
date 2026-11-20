@@ -1,6 +1,6 @@
 {
   "name": "serpscraper",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Official Node.js / JavaScript client for SerpScraper.Dev API (Google, Bing, AI Overviews, Google Trends).",
   "main": "src/index.js",
   "types": "src/index.d.ts",

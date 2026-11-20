@@ -179,6 +179,13 @@ All methods return a rich `SerpScraperResponse` object implementing `ArrayAccess
 | `$client->exchangeRate($from, $to)` | `exchange-rate` | [Exchange Rate API](https://serpscraper.dev/exchange-rate-api) |
 | `$client->cryptoPrice($symbols, $vs)` | `crypto-price` | [Cryptocurrency Price API](https://serpscraper.dev/crypto-price-api) |
 | `$client->domainInfo($domain)` | `domain-info` | [Domain Intelligence & WHOIS API](https://serpscraper.dev/domain-intelligence-api) |
+| `$client->seoDomainOverview($domain)` | `seo/domain-overview` | [SEO Domain Overview API](https://serpscraper.dev/docs) |
+| `$client->seoBacklinks($domain)` | `seo/backlinks` | [SEO Backlinks API](https://serpscraper.dev/docs) |
+| `$client->seoKeywordMetrics($keywords)` | `seo/keywords/metrics` | [Keyword Metrics API](https://serpscraper.dev/docs) |
+| `$client->seoKeywordSuggestions($keyword)` | `seo/keywords/suggestions` | [Keyword Suggestions API](https://serpscraper.dev/docs) |
+| `$client->proxySession($country)` | `proxy/session` | [Proxy API](https://serpscraper.dev/proxy-api) |
+| `$client->proxyRotate($sessionId)` | `proxy/rotate` | [Proxy API](https://serpscraper.dev/proxy-api) |
+| `$client->proxyLocations()` | `proxy/locations` | [Proxy API](https://serpscraper.dev/proxy-api) |
 
 ---
 

@@ -30,4 +30,11 @@ interface SerpScraperClientInterface
     public function exchangeRate(?string $from = 'USD', ?string $to = null, array $options = []): SerpScraperResponse;
     public function cryptoPrice(?string $symbols = 'btc,eth', ?string $vsCurrencies = 'usd', array $options = []): SerpScraperResponse;
     public function domainInfo(string $domain, array $options = []): SerpScraperResponse;
+    public function seoDomainOverview(string $domain, array $options = []): SerpScraperResponse;
+    public function seoBacklinks(string $domain, array $options = []): SerpScraperResponse;
+    public function seoKeywordMetrics(string|array $keywords, array $options = []): SerpScraperResponse;
+    public function seoKeywordSuggestions(string $keyword, array $options = []): SerpScraperResponse;
+    public function proxySession(?string $country = null, array $options = []): SerpScraperResponse;
+    public function proxyRotate(string $sessionId, array $options = []): SerpScraperResponse;
+    public function proxyLocations(array $options = []): SerpScraperResponse;
 }

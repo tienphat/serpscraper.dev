@@ -12,6 +12,38 @@ test('SerpScraperClient validates token', () => {
   assert.strictEqual(client.baseUrl, 'https://serpscraper.dev/api/v1');
 });
 
+test('SEO and proxy endpoints build expected URLs', async () => {
+  const urls = [];
+  const realFetch = global.fetch;
+  global.fetch = async (url) => {
+    urls.push(String(url));
+    return { ok: true, status: 200, text: async () => JSON.stringify({ data: [], in_seconds: 0 }), json: async () => ({ data: [], in_seconds: 0 }) };
+  };
+
+  try {
+    const client = new SerpScraperClient('tok');
+    await client.seoDomainOverview('apple.com');
+    await client.seoBacklinks('github.com');
+    await client.seoKeywordMetrics(['serp api', 'rank tracker']);
+    await client.seoKeywordSuggestions('laravel');
+    await client.proxySession('US');
+    await client.proxySession();
+    await client.proxyRotate('abc123');
+    await client.proxyLocations();
+  } finally {
+    global.fetch = realFetch;
+  }
+
+  assert.match(urls[0], /\/seo\/domain-overview\?.*domain=apple\.com/);
+  assert.match(urls[1], /\/seo\/backlinks\?/);
+  assert.match(urls[2], /\/seo\/keywords\/metrics\?.*keywords=serp\+api%2Crank\+tracker/);
+  assert.match(urls[3], /\/seo\/keywords\/suggestions\?/);
+  assert.match(urls[4], /\/proxy\/session\?.*country=US/);
+  assert.doesNotMatch(urls[5], /country=/);
+  assert.match(urls[6], /session_id=abc123/);
+  assert.match(urls[7], /\/proxy\/locations\?.*token=tok/);
+});
+
 test('SerpScraperResponse handles data accessors', () => {
   const raw = {
     data: [

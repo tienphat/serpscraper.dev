@@ -5,6 +5,13 @@ All notable changes to `tienphat/serpscraper-php` are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] — 2026-11-20
+
+### Added
+- **SEO endpoints** in all SDKs (PHP, Node.js, Python, Go): domain overview, backlinks, keyword metrics (up to 50 keywords, 1 credit per 10) and keyword suggestions.
+- **Proxy API endpoints** in all SDKs: `proxySession`, `proxyRotate`, `proxyLocations`.
+- Tests covering URL building for every new method.
+
 ## [1.1.0] — 2026-09-11
 
 ### Changed

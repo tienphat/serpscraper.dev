@@ -158,6 +158,13 @@ All methods return a clean `SerpScraperResponse` object with intuitive helpers:
 | `client.exchange_rate(from_c, to_c)` | `exchange-rate` | [Exchange Rate API](https://serpscraper.dev/exchange-rate-api) |
 | `client.crypto_price(symbols, vs)` | `crypto-price` | [Cryptocurrency Price API](https://serpscraper.dev/crypto-price-api) |
 | `client.domain_info(domain)` | `domain-info` | [Domain Intelligence & WHOIS API](https://serpscraper.dev/domain-intelligence-api) |
+| `client.seo_domain_overview(domain)` | `seo/domain-overview` | [SEO Domain Overview API](https://serpscraper.dev/docs) |
+| `client.seo_backlinks(domain)` | `seo/backlinks` | [SEO Backlinks API](https://serpscraper.dev/docs) |
+| `client.seo_keyword_metrics(keywords)` | `seo/keywords/metrics` | [Keyword Metrics API](https://serpscraper.dev/docs) |
+| `client.seo_keyword_suggestions(keyword)` | `seo/keywords/suggestions` | [Keyword Suggestions API](https://serpscraper.dev/docs) |
+| `client.proxy_session(country)` | `proxy/session` | [Proxy API](https://serpscraper.dev/proxy-api) |
+| `client.proxy_rotate(session_id)` | `proxy/rotate` | [Proxy API](https://serpscraper.dev/proxy-api) |
+| `client.proxy_locations()` | `proxy/locations` | [Proxy API](https://serpscraper.dev/proxy-api) |
 
 ---
 

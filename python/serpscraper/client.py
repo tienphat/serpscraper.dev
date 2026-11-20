@@ -127,6 +127,42 @@ class SerpScraperClient:
         """WHOIS, SSL certificate, DNS, and domain intelligence."""
         return self._call("domain-info", {"domain": domain, **options})
 
+    # ── SEO Endpoints ─────────────────────────────────────────────────────────
+
+    def seo_domain_overview(self, domain: str, **options: Any) -> SerpScraperResponse:
+        """Domain SEO overview: rank, organic traffic, keyword count, technologies."""
+        return self._call("seo/domain-overview", {"domain": domain, **options})
+
+    def seo_backlinks(self, domain: str, **options: Any) -> SerpScraperResponse:
+        """Backlink profile: domain rating, backlink count, referring domains."""
+        return self._call("seo/backlinks", {"domain": domain, **options})
+
+    def seo_keyword_metrics(self, keywords: Any, **options: Any) -> SerpScraperResponse:
+        """Search volume, CPC and competition for up to 50 keywords (1 credit per 10)."""
+        joined = ",".join(keywords) if isinstance(keywords, (list, tuple)) else keywords
+        return self._call("seo/keywords/metrics", {"keywords": joined, **options})
+
+    def seo_keyword_suggestions(self, keyword: str, **options: Any) -> SerpScraperResponse:
+        """Autocomplete-based keyword suggestions."""
+        return self._call("seo/keywords/suggestions", {"keyword": keyword, **options})
+
+    # ── Proxy Endpoints ───────────────────────────────────────────────────────
+
+    def proxy_session(self, country: Optional[str] = None, **options: Any) -> SerpScraperResponse:
+        """Allocate a proxy session, optionally pinned to a country code."""
+        params = dict(options)
+        if country:
+            params["country"] = country
+        return self._call("proxy/session", params)
+
+    def proxy_rotate(self, session_id: str, **options: Any) -> SerpScraperResponse:
+        """Rotate the exit IP of an active proxy session."""
+        return self._call("proxy/rotate", {"session_id": session_id, **options})
+
+    def proxy_locations(self, **options: Any) -> SerpScraperResponse:
+        """List supported proxy countries and regions."""
+        return self._call("proxy/locations", dict(options))
+
     # ── Internal Network Handling ─────────────────────────────────────────────
 
     def _call(self, endpoint: str, params: Dict[str, Any]) -> SerpScraperResponse:

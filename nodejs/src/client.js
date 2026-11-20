@@ -150,6 +150,42 @@ class SerpScraperClient {
     return this._call('domain-info', { domain, ...options });
   }
 
+  // ── SEO Endpoints ─────────────────────────────────────────────────────────
+
+  async seoDomainOverview(domain, options = {}) {
+    return this._call('seo/domain-overview', { domain, ...options });
+  }
+
+  async seoBacklinks(domain, options = {}) {
+    return this._call('seo/backlinks', { domain, ...options });
+  }
+
+  // Up to 50 keywords; 1 credit per 10.
+  async seoKeywordMetrics(keywords, options = {}) {
+    const list = Array.isArray(keywords) ? keywords.join(',') : keywords;
+    return this._call('seo/keywords/metrics', { keywords: list, ...options });
+  }
+
+  async seoKeywordSuggestions(keyword, options = {}) {
+    return this._call('seo/keywords/suggestions', { keyword, ...options });
+  }
+
+  // ── Proxy Endpoints ───────────────────────────────────────────────────────
+
+  async proxySession(country = null, options = {}) {
+    const params = { ...options };
+    if (country) params.country = country;
+    return this._call('proxy/session', params);
+  }
+
+  async proxyRotate(sessionId, options = {}) {
+    return this._call('proxy/rotate', { session_id: sessionId, ...options });
+  }
+
+  async proxyLocations(options = {}) {
+    return this._call('proxy/locations', options);
+  }
+
   // ── Internal HTTP Call ────────────────────────────────────────────────────
 
   async _call(endpoint, params = {}) {

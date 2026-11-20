@@ -167,6 +167,63 @@ class SerpScraperClient implements SerpScraperClientInterface
         return $this->call('domain-info', ['domain' => $domain] + $options);
     }
 
+    // ── SEO Endpoints ────────────────────────────────────────────────────────
+
+    /** Domain SEO overview: rank, organic traffic, keyword count, technologies. */
+    public function seoDomainOverview(string $domain, array $options = []): SerpScraperResponse
+    {
+        return $this->call('seo/domain-overview', ['domain' => $domain] + $options);
+    }
+
+    /** Backlink profile: domain rating, backlink count, referring domains, top backlinks. */
+    public function seoBacklinks(string $domain, array $options = []): SerpScraperResponse
+    {
+        return $this->call('seo/backlinks', ['domain' => $domain] + $options);
+    }
+
+    /**
+     * Monthly search volume, CPC and competition for up to 50 keywords (1 credit per 10).
+     *
+     * @param string|string[] $keywords
+     */
+    public function seoKeywordMetrics(string|array $keywords, array $options = []): SerpScraperResponse
+    {
+        $list = is_array($keywords) ? implode(',', $keywords) : $keywords;
+
+        return $this->call('seo/keywords/metrics', ['keywords' => $list] + $options);
+    }
+
+    /** Autocomplete-based keyword suggestions. */
+    public function seoKeywordSuggestions(string $keyword, array $options = []): SerpScraperResponse
+    {
+        return $this->call('seo/keywords/suggestions', ['keyword' => $keyword] + $options);
+    }
+
+    // ── Proxy Endpoints ──────────────────────────────────────────────────────
+
+    /** Allocate a proxy session (optionally pinned to a country code). */
+    public function proxySession(?string $country = null, array $options = []): SerpScraperResponse
+    {
+        $params = $options;
+        if ($country !== null && $country !== '') {
+            $params['country'] = $country;
+        }
+
+        return $this->call('proxy/session', $params);
+    }
+
+    /** Rotate the exit IP of an active proxy session. */
+    public function proxyRotate(string $sessionId, array $options = []): SerpScraperResponse
+    {
+        return $this->call('proxy/rotate', ['session_id' => $sessionId] + $options);
+    }
+
+    /** List supported proxy countries and regions. */
+    public function proxyLocations(array $options = []): SerpScraperResponse
+    {
+        return $this->call('proxy/locations', $options);
+    }
+
     // ── Internals ────────────────────────────────────────────────────────────
 
     private function call(string $endpoint, array $params): SerpScraperResponse

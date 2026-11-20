@@ -224,6 +224,11 @@ All SDKs map directly to the high-performance endpoints hosted at [serpscraper.d
 | **Exchange Rate API** | `exchangeRate()` / `ExchangeRate` | `exchange_rate()` | [Fiat Exchange Rate API](https://serpscraper.dev/exchange-rate-api) |
 | **Crypto Price API** | `cryptoPrice()` / `CryptoPrice` | `crypto_price()` | [Cryptocurrency Price API](https://serpscraper.dev/crypto-price-api) |
 | **Domain Intelligence** | `domainInfo()` / `DomainInfo` | `domain_info()` | [Domain Intelligence & WHOIS API](https://serpscraper.dev/domain-intelligence-api) |
+| **SEO Domain Overview** | `seoDomainOverview()` / `SEODomainOverview` | `seo_domain_overview()` | [SEO API docs](https://serpscraper.dev/docs) |
+| **SEO Backlinks** | `seoBacklinks()` / `SEOBacklinks` | `seo_backlinks()` | [SEO API docs](https://serpscraper.dev/docs) |
+| **Keyword Metrics** | `seoKeywordMetrics()` / `SEOKeywordMetrics` | `seo_keyword_metrics()` | [SEO API docs](https://serpscraper.dev/docs) |
+| **Keyword Suggestions** | `seoKeywordSuggestions()` / `SEOKeywordSuggestions` | `seo_keyword_suggestions()` | [SEO API docs](https://serpscraper.dev/docs) |
+| **Proxy API** | `proxySession()`, `proxyRotate()`, `proxyLocations()` / `Proxy*` | `proxy_session()`, `proxy_rotate()`, `proxy_locations()` | [Rotating Proxy API](https://serpscraper.dev/proxy-api) |
 
 ---
 

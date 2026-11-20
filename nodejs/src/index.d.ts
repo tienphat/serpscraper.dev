@@ -65,4 +65,11 @@ export class SerpScraperClient {
   exchangeRate(fromCurrency?: string, toCurrency?: string | null, options?: SearchOptions): Promise<SerpScraperResponse>;
   cryptoPrice(symbols?: string, vsCurrencies?: string, options?: SearchOptions): Promise<SerpScraperResponse>;
   domainInfo(domain: string, options?: SearchOptions): Promise<SerpScraperResponse>;
+  seoDomainOverview(domain: string, options?: SearchOptions): Promise<SerpScraperResponse>;
+  seoBacklinks(domain: string, options?: SearchOptions): Promise<SerpScraperResponse>;
+  seoKeywordMetrics(keywords: string | string[], options?: SearchOptions): Promise<SerpScraperResponse>;
+  seoKeywordSuggestions(keyword: string, options?: SearchOptions): Promise<SerpScraperResponse>;
+  proxySession(country?: string | null, options?: SearchOptions): Promise<SerpScraperResponse>;
+  proxyRotate(sessionId: string, options?: SearchOptions): Promise<SerpScraperResponse>;
+  proxyLocations(options?: SearchOptions): Promise<SerpScraperResponse>;
 }
