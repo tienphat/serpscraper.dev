@@ -5,11 +5,33 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "serpscraper"
 version = "1.2.0"
-description = "Official Python client for SerpScraper.Dev API."
+description = "Python SERP API client: real-time Google search results, AI Overviews, Google Trends, news, images, maps and SEO data as JSON. 5,000 free credits on signup."
 readme = "README.md"
 requires-python = ">=3.8"
 license = { text = "MIT" }
 authors = [
     { name = "SerpScraper.Dev", email = "support@serpscraper.dev" }
 ]
-keywords = ["serp", "serpscraper", "google", "bing", "search-api", "ai-overview", "google-trends"]
+keywords = ["serp", "serp-api", "serpscraper", "serp-scraper", "google-search-api", "google-serp", "google-search", "bing-search", "search-api", "rank-tracker", "rank-checker", "seo", "seo-api", "keyword-research", "backlinks", "google-ai-overview", "google-trends", "web-scraping", "proxy-api"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Topic :: Internet :: WWW/HTTP :: Indexing/Search",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Typing :: Typed",
+]
+
+[project.urls]
+Homepage = "https://serpscraper.dev/serp-api"
+Documentation = "https://serpscraper.dev/docs"
+Repository = "https://github.com/tienphat/serpscraper.dev"
+Issues = "https://serpscraper.dev/contact"
+
+[tool.setuptools.packages.find]
+include = ["serpscraper*"]
+
+[tool.setuptools.package-data]
+serpscraper = ["py.typed"]
