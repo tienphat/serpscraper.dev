@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <a href="https://pypi.org/project/serpscraper/"><img src="https://img.shields.io/pypi/v/serpscraper.svg" alt="PyPI Version"></a>
+  <a href="https://pypi.org/project/serpscraper-dev/"><img src="https://img.shields.io/pypi/v/serpscraper-dev.svg" alt="PyPI Version"></a>
   <img src="https://img.shields.io/badge/Python-3.8%2B-3776AB?logo=python" alt="Python 3.8+">
   <img src="https://img.shields.io/badge/Dependencies-Zero-success" alt="Zero Dependencies">
   <a href="../LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="MIT License"></a>
@@ -34,7 +34,7 @@
 Install via pip:
 
 ```bash
-pip install serpscraper
+pip install serpscraper-dev
 ```
 
 Or install from source in editable mode:

@@ -11,7 +11,7 @@
 
 <p align="center">
   <a href="https://packagist.org/packages/tienphat/serpscraper-php"><img src="https://img.shields.io/badge/PHP-8.1%2B-777BB4?logo=php" alt="PHP 8.1+"></a>
-  <a href="https://pypi.org/project/serpscraper/"><img src="https://img.shields.io/badge/Python-3.8%2B-3776AB?logo=python" alt="Python 3.8+"></a>
+  <a href="https://pypi.org/project/serpscraper-dev/"><img src="https://img.shields.io/badge/Python-3.8%2B-3776AB?logo=python" alt="Python 3.8+"></a>
   <a href="https://www.npmjs.com/package/serpscraper"><img src="https://img.shields.io/badge/Node.js-18%2B-339933?logo=node.js" alt="Node.js 18+"></a>
   <a href="https://pkg.go.dev/github.com/tienphat/serpscraper.dev/go"><img src="https://img.shields.io/badge/Go-1.21%2B-00ADD8?logo=go" alt="Go 1.21+"></a>
   <img src="https://img.shields.io/badge/Dependencies-Zero-success" alt="Zero Dependencies">
@@ -41,7 +41,7 @@ This repository provides official client libraries across four major programming
 ```
 serpscraper/
 ├── php/        # 🐘 PHP SDK (Composer: tienphat/serpscraper-php) -> php/README.md
-├── python/     # 🐍 Python SDK (PyPI: serpscraper)               -> python/README.md
+├── python/     # 🐍 Python SDK (PyPI: serpscraper-dev)               -> python/README.md
 ├── nodejs/     # 🟩 Node.js / TypeScript SDK (npm: serpscraper)  -> nodejs/README.md
 ├── go/         # 🐹 Go SDK (Go Modules: .../go)                 -> go/README.md
 ├── composer.json # Root Composer support for backward-compatible installs
@@ -51,7 +51,7 @@ serpscraper/
 | Language | Package Manager | Installation | Detailed Guide |
 |---|---|---|---|
 | **PHP** | Packagist / Composer | `composer require tienphat/serpscraper-php` | [`php/README.md`](php/README.md) |
-| **Python** | PyPI / pip | `pip install serpscraper` | [`python/README.md`](python/README.md) |
+| **Python** | PyPI / pip | `pip install serpscraper-dev` | [`python/README.md`](python/README.md) |
 | **Node.js / TS** | npm / yarn / pnpm | `npm install serpscraper` | [`nodejs/README.md`](nodejs/README.md) |
 | **Go** | Go Modules | `go get github.com/tienphat/serpscraper.dev/go` | [`go/README.md`](go/README.md) |
 
@@ -94,7 +94,7 @@ echo "Top Trend: " . $trends->first()['keyword'] . "\n";
 ### 🐍 2. Python SDK
 
 ```bash
-pip install serpscraper
+pip install serpscraper-dev
 ```
 
 ```python
