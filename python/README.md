@@ -212,7 +212,7 @@ python -m unittest discover -s tests
 - 🌐 **Website**: [https://serpscraper.dev](https://serpscraper.dev)
 - 📖 **Official API Documentation**: [https://serpscraper.dev/docs](https://serpscraper.dev/docs)
 - 🔑 **Get Free API Key**: [https://serpscraper.dev](https://serpscraper.dev)
-- 🐛 **Issue Tracker**: [GitHub Issues](https://github.com/tienphat/serpscraper-php/issues)
+- 🐛 **Issue Tracker**: [GitHub Issues](https://github.com/tienphat/serpscraper.dev/issues)
 - 💬 **Telegram Support**: [@peterpanpro](https://t.me/peterpanpro)
 
 ---

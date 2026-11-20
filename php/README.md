@@ -35,7 +35,8 @@
 Install via [Composer](https://getcomposer.org/):
 
 ```bash
-composer require tienphat/serpscraper-php
+composer config repositories.serpscraper vcs https://github.com/tienphat/serpscraper.dev
+composer require tienphat/serpscraper-php:^1.2
 ```
 
 ---
@@ -233,7 +234,7 @@ vendor/bin/phpunit
 - 🌐 **Website**: [https://serpscraper.dev](https://serpscraper.dev)
 - 📖 **Official API Documentation**: [https://serpscraper.dev/docs](https://serpscraper.dev/docs)
 - 🔑 **Get Free API Key**: [https://serpscraper.dev](https://serpscraper.dev)
-- 🐛 **Issue Tracker**: [GitHub Issues](https://github.com/tienphat/serpscraper-php/issues)
+- 🐛 **Issue Tracker**: [GitHub Issues](https://github.com/tienphat/serpscraper.dev/issues)
 - 💬 **Telegram Support**: [@peterpanpro](https://t.me/peterpanpro)
 
 ---

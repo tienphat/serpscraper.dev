@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <a href="https://pkg.go.dev/github.com/tienphat/serpscraper-php/go"><img src="https://pkg.go.dev/badge/github.com/tienphat/serpscraper-php/go.svg" alt="Go Reference"></a>
+  <a href="https://pkg.go.dev/github.com/tienphat/serpscraper.dev/go"><img src="https://pkg.go.dev/badge/github.com/tienphat/serpscraper.dev/go.svg" alt="Go Reference"></a>
   <img src="https://img.shields.io/badge/Go-1.21%2B-00ADD8?logo=go" alt="Go 1.21+">
   <img src="https://img.shields.io/badge/Dependencies-Zero-success" alt="Zero Dependencies">
   <a href="../LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="MIT License"></a>
@@ -34,7 +34,7 @@ The `serpscraper` Go SDK provides blazing-fast, concurrent access to the [SerpSc
 ## 📦 Installation
 
 ```bash
-go get github.com/tienphat/serpscraper-php/go
+go get github.com/tienphat/serpscraper.dev/go
 ```
 
 ---
@@ -56,7 +56,7 @@ import (
 	"log"
 	"time"
 
-	serpscraper "github.com/tienphat/serpscraper-php/go"
+	serpscraper "github.com/tienphat/serpscraper.dev/go"
 )
 
 func main() {
@@ -112,7 +112,7 @@ import (
 	"log"
 	"time"
 
-	serpscraper "github.com/tienphat/serpscraper-php/go"
+	serpscraper "github.com/tienphat/serpscraper.dev/go"
 )
 
 func main() {
@@ -256,7 +256,7 @@ go test -v ./...
 - 🌐 **Website**: [https://serpscraper.dev](https://serpscraper.dev)
 - 📖 **Official API Documentation**: [https://serpscraper.dev/docs](https://serpscraper.dev/docs)
 - 🔑 **Get Free API Key**: [https://serpscraper.dev](https://serpscraper.dev)
-- 🐛 **Issue Tracker**: [GitHub Issues](https://github.com/tienphat/serpscraper-php/issues)
+- 🐛 **Issue Tracker**: [GitHub Issues](https://github.com/tienphat/serpscraper.dev/issues)
 - 💬 **Community Support**: [Telegram @peterpanpro](https://t.me/peterpanpro)
 
 ---

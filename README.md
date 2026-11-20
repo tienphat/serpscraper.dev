@@ -13,7 +13,7 @@
   <a href="https://packagist.org/packages/tienphat/serpscraper-php"><img src="https://img.shields.io/badge/PHP-8.1%2B-777BB4?logo=php" alt="PHP 8.1+"></a>
   <a href="https://pypi.org/project/serpscraper/"><img src="https://img.shields.io/badge/Python-3.8%2B-3776AB?logo=python" alt="Python 3.8+"></a>
   <a href="https://www.npmjs.com/package/serpscraper"><img src="https://img.shields.io/badge/Node.js-18%2B-339933?logo=node.js" alt="Node.js 18+"></a>
-  <a href="https://pkg.go.dev/github.com/tienphat/serpscraper-php/go"><img src="https://img.shields.io/badge/Go-1.21%2B-00ADD8?logo=go" alt="Go 1.21+"></a>
+  <a href="https://pkg.go.dev/github.com/tienphat/serpscraper.dev/go"><img src="https://img.shields.io/badge/Go-1.21%2B-00ADD8?logo=go" alt="Go 1.21+"></a>
   <img src="https://img.shields.io/badge/Dependencies-Zero-success" alt="Zero Dependencies">
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="MIT License"></a>
   <a href="https://serpscraper.dev"><img src="https://img.shields.io/badge/API%20Key-Free%20Tier-green" alt="Free API Key"></a>
@@ -53,7 +53,7 @@ serpscraper/
 | **PHP** | Packagist / Composer | `composer require tienphat/serpscraper-php` | [`php/README.md`](php/README.md) |
 | **Python** | PyPI / pip | `pip install serpscraper` | [`python/README.md`](python/README.md) |
 | **Node.js / TS** | npm / yarn / pnpm | `npm install serpscraper` | [`nodejs/README.md`](nodejs/README.md) |
-| **Go** | Go Modules | `go get github.com/tienphat/serpscraper-php/go` | [`go/README.md`](go/README.md) |
+| **Go** | Go Modules | `go get github.com/tienphat/serpscraper.dev/go` | [`go/README.md`](go/README.md) |
 
 ---
 
@@ -64,7 +64,8 @@ Grab your free API key at [serpscraper.dev](https://serpscraper.dev).
 ### 🐘 1. PHP SDK
 
 ```bash
-composer require tienphat/serpscraper-php
+composer config repositories.serpscraper vcs https://github.com/tienphat/serpscraper.dev
+composer require tienphat/serpscraper-php:^1.2
 ```
 
 ```php
@@ -156,7 +157,7 @@ main();
 ### 🐹 4. Go SDK
 
 ```bash
-go get github.com/tienphat/serpscraper-php/go
+go get github.com/tienphat/serpscraper.dev/go
 ```
 
 ```go
@@ -167,7 +168,7 @@ import (
 	"fmt"
 	"time"
 
-	serpscraper "github.com/tienphat/serpscraper-php/go"
+	serpscraper "github.com/tienphat/serpscraper.dev/go"
 )
 
 func main() {
@@ -301,7 +302,7 @@ cd go && go test -v ./...
 - 🤖 **Google AI Overview API**: [https://serpscraper.dev/google-ai-overview-api](https://serpscraper.dev/google-ai-overview-api)
 - 📈 **Google Trends API**: [https://serpscraper.dev/google-trends-api](https://serpscraper.dev/google-trends-api)
 - 💬 **Telegram Support**: [@peterpanpro](https://t.me/peterpanpro)
-- 🐛 **Issue Tracker**: [GitHub Issues](https://github.com/tienphat/serpscraper-php/issues)
+- 🐛 **Issue Tracker**: [GitHub Issues](https://github.com/tienphat/serpscraper.dev/issues)
 
 ---
 
