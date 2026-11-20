@@ -51,8 +51,11 @@ func TestGoogleSearchWithMockServer(t *testing.T) {
 		if r.URL.Query().Get("engine") != "google" {
 			t.Errorf("expected engine=google in query, got %s", r.URL.Query().Get("engine"))
 		}
-		if r.URL.Query().Get("token") != "secret" {
-			t.Errorf("expected token=secret in query, got %s", r.URL.Query().Get("token"))
+		if r.Header.Get("X-Api-Key") != "secret" {
+			t.Errorf("expected X-Api-Key header to be secret, got %q", r.Header.Get("X-Api-Key"))
+		}
+		if r.URL.Query().Get("token") != "" {
+			t.Errorf("token must not be sent in the query string")
 		}
 		w.Header().Set("Content-Type", "application/json")
 		_ = json.NewEncoder(w).Encode(mockPayload)
@@ -116,7 +119,7 @@ func TestSEOAndProxyEndpoints(t *testing.T) {
 		{"/proxy/session", "country", "US"},
 		{"/proxy/session", "country", ""},
 		{"/proxy/rotate", "session_id", "abc123"},
-		{"/proxy/locations", "token", "tok"},
+		{"/proxy/locations", "token", ""},
 	}
 	if len(seen) != len(want) {
 		t.Fatalf("expected %d requests, got %d", len(want), len(seen))

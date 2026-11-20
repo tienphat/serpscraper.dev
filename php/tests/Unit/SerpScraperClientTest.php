@@ -107,7 +107,7 @@ class SerpScraperClientTest extends TestCase
 
         $client->proxyLocations();
         $this->assertStringContainsString('/proxy/locations?', $client->lastUrl());
-        $this->assertStringContainsString('token=tok', $client->lastUrl());
+        $this->assertStringNotContainsString('token=', $client->lastUrl());
     }
 
     public function test_extract_webpage_returns_response(): void
@@ -239,12 +239,12 @@ class SerpScraperClientTest extends TestCase
         $this->assertStringContainsString('hl=vi', $client->lastUrl());
     }
 
-    public function test_token_is_always_appended_to_url(): void
+    public function test_token_is_not_leaked_into_url(): void
     {
         $client = $this->stubClientCapture(SerpScraperConfig::make('secret-key'));
         $client->webSearch('test');
 
-        $this->assertStringContainsString('token=secret-key', $client->lastUrl());
+        $this->assertStringNotContainsString('secret-key', $client->lastUrl());
     }
 
     public function test_google_search_calls_webs_search_with_engine_google(): void

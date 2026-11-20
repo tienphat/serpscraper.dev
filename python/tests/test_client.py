@@ -61,7 +61,8 @@ class TestSerpScraperPython(unittest.TestCase):
         req = mock_urlopen.call_args[0][0]
         self.assertIn("engine=google", req.full_url)
         self.assertIn("keyword=test", req.full_url)
-        self.assertIn("token=my-secret-key", req.full_url)
+        self.assertNotIn("my-secret-key", req.full_url)
+        self.assertEqual(req.get_header("X-api-key"), "my-secret-key")
 
     @patch("urllib.request.urlopen")
     def test_seo_and_proxy_endpoints_build_expected_urls(self, mock_urlopen):
@@ -79,7 +80,7 @@ class TestSerpScraperPython(unittest.TestCase):
             (client.seo_keyword_suggestions("laravel"), "/seo/keywords/suggestions?", "keyword=laravel"),
             (client.proxy_session("US"), "/proxy/session?", "country=US"),
             (client.proxy_rotate("abc123"), "/proxy/rotate?", "session_id=abc123"),
-            (client.proxy_locations(), "/proxy/locations?", "token=tok"),
+            (client.proxy_locations(), "/proxy/locations", "/proxy/locations"),
         ]
         urls = [c.args[0].full_url for c in mock_urlopen.call_args_list]
         self.assertEqual(len(urls), len(calls))

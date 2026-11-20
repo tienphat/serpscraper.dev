@@ -235,7 +235,6 @@ class SerpScraperClient implements SerpScraperClientInterface
             $params['hl'] = $this->config->getLanguage();
         }
 
-        $params['token'] = $this->config->getToken();
         $url = $this->config->getBaseUrl() . '/' . ltrim($endpoint, '/') . '?' . http_build_query($params);
 
         [$raw, $httpCode] = $this->send($url);
@@ -259,6 +258,7 @@ class SerpScraperClient implements SerpScraperClientInterface
             CURLOPT_CUSTOMREQUEST  => 'GET',
             CURLOPT_HTTPHEADER     => [
                 'Accept: application/json',
+                'X-Api-Key: ' . $this->config->getToken(),
                 'User-Agent: ' . $this->config->getUserAgent(),
             ],
         ]);

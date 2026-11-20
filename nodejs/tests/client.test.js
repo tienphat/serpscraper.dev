@@ -15,8 +15,10 @@ test('SerpScraperClient validates token', () => {
 test('SEO and proxy endpoints build expected URLs', async () => {
   const urls = [];
   const realFetch = global.fetch;
-  global.fetch = async (url) => {
+  const keys = [];
+  global.fetch = async (url, init) => {
     urls.push(String(url));
+    keys.push(init.headers['X-Api-Key']);
     return { ok: true, status: 200, text: async () => JSON.stringify({ data: [], in_seconds: 0 }), json: async () => ({ data: [], in_seconds: 0 }) };
   };
 
@@ -41,7 +43,9 @@ test('SEO and proxy endpoints build expected URLs', async () => {
   assert.match(urls[4], /\/proxy\/session\?.*country=US/);
   assert.doesNotMatch(urls[5], /country=/);
   assert.match(urls[6], /session_id=abc123/);
-  assert.match(urls[7], /\/proxy\/locations\?.*token=tok/);
+  assert.match(urls[7], /\/proxy\/locations\?/);
+  assert.ok(urls.every((u) => !u.includes('token=')));
+  assert.ok(keys.every((k) => k === 'tok'));
 });
 
 test('SerpScraperResponse handles data accessors', () => {

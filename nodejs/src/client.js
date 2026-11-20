@@ -204,8 +204,6 @@ class SerpScraperClient {
       }
     }
 
-    query.set('token', this.token);
-
     const url = `${this.baseUrl}/${endpoint.replace(/^\/+/, '')}?${query.toString()}`;
 
     const controller = new AbortController();
@@ -219,6 +217,7 @@ class SerpScraperClient {
         method: 'GET',
         headers: {
           'Accept': 'application/json',
+          'X-Api-Key': this.token,
           'User-Agent': this.userAgent,
         },
         signal: controller.signal,

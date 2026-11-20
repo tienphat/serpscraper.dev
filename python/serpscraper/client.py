@@ -173,8 +173,6 @@ class SerpScraperClient:
         if self.config.language and "hl" not in call_params:
             call_params["hl"] = self.config.language
 
-        call_params["token"] = self.config.token
-
         query_string = urllib.parse.urlencode(call_params)
         url = f"{self.config.base_url}/{endpoint.lstrip('/')}?{query_string}"
 
@@ -182,6 +180,7 @@ class SerpScraperClient:
             url,
             headers={
                 "Accept": "application/json",
+                "X-Api-Key": self.config.token,
                 "User-Agent": self.config.user_agent,
             },
             method="GET",

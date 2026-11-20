@@ -240,8 +240,6 @@ func (c *Client) call(ctx context.Context, endpoint string, baseParams map[strin
 		m["hl"] = c.config.Language
 	}
 
-	m["token"] = c.config.Token
-
 	vals := url.Values{}
 	for k, v := range m {
 		if v != "" {
@@ -257,6 +255,7 @@ func (c *Client) call(ctx context.Context, endpoint string, baseParams map[strin
 	}
 
 	req.Header.Set("Accept", "application/json")
+	req.Header.Set("X-Api-Key", c.config.Token)
 	req.Header.Set("User-Agent", c.config.UserAgent)
 
 	resp, err := c.httpClient.Do(req)

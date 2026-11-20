@@ -1,3 +1,5 @@
 .env
 vendor/
 .phpunit.result.cache
+__pycache__/
+*.pyc
