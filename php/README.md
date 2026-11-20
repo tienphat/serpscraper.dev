@@ -35,8 +35,7 @@
 Install via [Composer](https://getcomposer.org/):
 
 ```bash
-composer config repositories.serpscraper vcs https://github.com/tienphat/serpscraper.dev
-composer require tienphat/serpscraper-php:^1.2
+composer require tienphat/serpscraper-php
 ```
 
 ---
